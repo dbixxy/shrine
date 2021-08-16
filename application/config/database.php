@@ -1,5 +1,81 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+// defined('BASEPATH') OR exit('No direct script access allowed');
+if (!defined('BASEPATH')) exit('No direct script access allowed');
+/*
+| -------------------------------------------------------------------
+| DATABASE CONNECTIVITY SETTINGS
+| -------------------------------------------------------------------
+| This file will contain the settings needed to access your database.
+|
+| For complete instructions please consult the "Database Connection"
+| page of the User Guide.
+|
+| -------------------------------------------------------------------
+| EXPLANATION OF VARIABLES
+| -------------------------------------------------------------------|
+| ['hostname'] The hostname of your database server.
+| ['username'] The username used to connect to the database
+| ['password'] The password used to connect to the database
+| ['database'] The name of the database you want to connect to
+| ['dbdriver'] The database type. ie: mysql. Currently supported: mysql, mysqli, postgre, odbc, mssql
+| ['dbprefix'] You can add an optional prefix, which will be added to the table name when using the Active Record class
+| ['pconnect'] TRUE/FALSE - Whether to use a persistent connection
+| ['db_debug'] TRUE/FALSE - Whether database errors should be displayed.
+| ['active_r'] TRUE/FALSE - Whether to load the active record class
+| ['cache_on'] TRUE/FALSE - Enables/disables query caching
+| ['cachedir'] The path to the folder where cache files should be stored
+|
+| The $active_group variable lets you choose which connection group to
+| make active. By default there is only one group (the "default" group).
+|
+*/
+$active_record = TRUE;
+$db['default']['hostname'] = "localhost";
+$db['default']['username'] = "";
+$db['default']['password'] = "";
+$db['default']['database'] = "";
+$db['default']['dbdriver'] = "mysqli";
+$db['default']['dbprefix'] = "";
+$db['default']['pconnect'] = TRUE;
+$db['default']['db_debug'] = TRUE;
+$db['default']['cache_on'] = FALSE;
+$db['default']['cachedir'] = "";
+$db['default']['char_set'] = "utf8";
+$db['default']['dbcollat'] = "utf8_general_ci";
+
+// example
+$db['example']['hostname'] = "localhost";
+$db['example']['username'] = "root";
+$db['example']['password'] = "";
+$db['example']['database'] = "example";
+$db['example']['dbdriver'] = "mysql";
+$db['example']['dbprefix'] = "";
+$db['example']['active_r'] = TRUE;
+$db['example']['pconnect'] = TRUE;
+$db['example']['db_debug'] = TRUE;
+$db['example']['cache_on'] = FALSE;
+$db['example']['cachedir'] = "";
+$db['example']['char_set'] = "utf8";
+$db['example']['dbcollat'] = "utf8_general_ci";
+
+// Example 2
+$db['example2']['hostname'] = "localhost";
+$db['example2']['username'] = "root";
+$db['example2']['password'] = "root";
+$db['example2']['database'] = "testfoo";
+$db['example2']['dbdriver'] = "mysql";
+$db['example2']['dbprefix'] = "";
+$db['example2']['active_r'] = TRUE;
+$db['example2']['pconnect'] = TRUE;
+$db['example2']['db_debug'] = TRUE;
+$db['example2']['cache_on'] = FALSE;
+$db['example2']['cachedir'] = "";
+$db['example2']['char_set'] = "utf8";
+$db['example2']['dbcollat'] = "utf8_general_ci";
+
+// Check the configuration group in use exists, if not use the default
+$active_group = (defined('SITE') && array_key_exists(SITE, $db)) ? SITE : 'default';
+
 
 /*
 | -------------------------------------------------------------------

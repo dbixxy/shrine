@@ -1,5 +1,10 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+// defined('BASEPATH') OR exit('No direct script access allowed');
+if (!defined('BASEPATH')) exit('No direct script access allowed');
+/*|--------------------------------------------------------------------------| Base Site URL|--------------------------------------------------------------------------|| 
+URL to your CodeIgniter root. Typically this will be your base URL,| WITH a trailing slash:|| http://www.your-site.com/|*/
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +28,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost:8888/casino/';
+// $config['base_url'] = 'http://localhost:8888/casino/';
+if(isset($_SERVER['HTTP_HOST'])){    
+    $config['base_url'] = isset($_SERVER['HTTPS']) && strtolower($_SERVER['HTTPS']) == 'on' ? 'https' : 'http';    
+    $config['base_url'] .= '://'. $_SERVER['HTTP_HOST'];    
+    $config['base_url'] .= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
+}else{    
+    $config['base_url'] = 'http://localhost/';
+}
+
+
 
 /*
 |--------------------------------------------------------------------------
