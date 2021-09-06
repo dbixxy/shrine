@@ -11,6 +11,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |	https://codeigniter.com/user_guide/general/hooks.html
 |
 */
+
+$hook['pre_system'][] = array(
+	'class'    => 'HostNameRouter',
+	'function' => 'pre_system',
+	'filename' => 'HostNameRouter.php',
+	'filepath' => 'hooks',
+	'params'   => array()
+);
+$hook['pre_controller'][] = array(
+	'class'    => 'HostNameRouter',
+	'function' => 'pre_controller',
+	'filename' => 'HostNameRouter.php',
+	'filepath' => 'hooks',
+	'params'   => array()
+);
+
 $hook['post_controller'] = array(     // 'post_controller' indicated execution of hooks after controller is finished
     'class' => 'Db_log',             // Name of Class
     'function' => 'logQueries',     // Name of function to be executed in from Class

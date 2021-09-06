@@ -34,7 +34,7 @@ if(isset($_SERVER['HTTP_HOST'])){
     $config['base_url'] .= '://'. $_SERVER['HTTP_HOST'];    
     $config['base_url'] .= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
 }else{    
-    $config['base_url'] = 'http://localhost/';
+    $config['base_url'] = 'http://localhost:8888/shrine4';
 }
 
 
@@ -128,7 +128,7 @@ $config['enable_hooks'] = TRUE;
 | https://codeigniter.com/user_guide/general/creating_libraries.html
 |
 */
-$config['subclass_prefix'] = 'MY_';
+$config['subclass_prefix'] = 'ADMIN_';
 
 /*
 |--------------------------------------------------------------------------
